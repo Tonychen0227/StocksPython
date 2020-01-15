@@ -13,11 +13,7 @@ initialized = False
 
 # ALL STOCKS
 data = open('nasdaqtraded.txt', 'r')
-counter = 0
 for row in data:
-    counter += 1
-    if (counter > 10):
-        break;
     row = str(row).split("|")
     symbol = row[0]
     if initialized:
@@ -96,11 +92,7 @@ initialized = False
 
 with open("constituents_csv.csv", mode='r') as infile:
     reader = csv.reader(infile)
-    counter = 0
     for row in reader:
-        counter += 1
-        if (counter > 10):
-            break;
         symbol = row[0]
         if initialized:
             try:
